@@ -1,0 +1,1 @@
+{"version":3,"file":"base-service.interface.js","sourceRoot":"","sources":["../../src/services/base-service.interface.ts"],"names":[],"mappings":";;;AASA,MAAa,aAAa;IAMtB,YAAY,MAAwB;QAChC,MAAM,CAAC,MAAM,CAAC,IAAI,EAAE,MAAM,CAAC,CAAC;IAChC,CAAC;CACJ;AATD,sCASC;AAED,IAAY,aAIX;AAJD,WAAY,aAAa;IACrB,uDAAW,CAAA;IACX,uDAAO,CAAA;IACP,qDAAM,CAAA;AACV,CAAC,EAJW,aAAa,6BAAb,aAAa,QAIxB"}
