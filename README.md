@@ -1,6 +1,12 @@
 # Node.Js-Microservice-Study-Case
 Node Js Microservice and Docker-Compose
 
+NOTE:
+1. One db rather than seperate it. Nevertheless, projects work like there were 2 db. Its because we request some datas from other microservices regarding to the case below.
+2. Used axios library for http requests.
+3. From the beginning, I tried EventPattern for create or edit data but then i tought that i wanted to receive a response all of my requests. Then, i flipped it to MessagePattern.
+
+
 CASE:
 In this project, you are going to develop 2 microservices using Node-JS.
 The microservices should be able to create, update, delete and read operations of
