@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "kloia-gateway"
+		},
+		{
+			"path": "kloia-review"
+		},
+		{
+			"path": "kloia-article"
+		}
+	],
+	"settings": {}
+}

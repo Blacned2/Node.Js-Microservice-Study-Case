@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: kloia
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  gateway:
+    restart: always
+    build:
+      context: ./kloia-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./kloia-gateway/.env.production
+    depends_on:
+      - review
+      - article
+    networks:
+      - app-network
+
+  review:
+    restart: always
+    build:
+      context: ./kloia-review
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./kloia-review/.env.production
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  article:
+    restart: always
+    build:
+      context: ./kloia-article
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    env_file:
+      - ./kloia-article/.env.production
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
